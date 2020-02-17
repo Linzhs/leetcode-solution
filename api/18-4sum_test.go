@@ -1,9 +1,8 @@
 package api
 
 import (
+	"reflect"
 	"testing"
-
-	"github.com/google/go-cmp/cmp"
 )
 
 func TestFourSum(t *testing.T) {
@@ -19,7 +18,7 @@ func TestFourSum(t *testing.T) {
 
 	for _, v := range tests {
 		got := fourSum(v.nums, v.target)
-		if !cmp.Equal(got, v.want) {
+		if !reflect.DeepEqual(got, v.want) {
 			t.Errorf("test case (nums:%v, target:%d) want %v but got %v", v.nums, v.target, v.want, got)
 		}
 	}

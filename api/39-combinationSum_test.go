@@ -1,9 +1,8 @@
 package api
 
 import (
+	"reflect"
 	"testing"
-
-	"github.com/google/go-cmp/cmp"
 )
 
 func TestCombinationSum(t *testing.T) {
@@ -19,7 +18,7 @@ func TestCombinationSum(t *testing.T) {
 
 	for _, test := range tests {
 		got := combinationSum(test.candidates, test.target)
-		if !cmp.Equal(got, test.want) {
+		if !reflect.DeepEqual(got, test.want) {
 			t.Errorf("test case (candidates: %v) want %v but got %v", test.candidates, test.want, got)
 		}
 	}

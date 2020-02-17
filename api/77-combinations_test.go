@@ -1,9 +1,8 @@
 package api
 
 import (
+	"reflect"
 	"testing"
-
-	"github.com/google/go-cmp/cmp"
 )
 
 func TestCombine(t *testing.T) {
@@ -17,7 +16,7 @@ func TestCombine(t *testing.T) {
 
 	for _, test := range tests {
 		got := combine(test.n, test.k)
-		if !cmp.Equal(got, test.want) {
+		if !reflect.DeepEqual(got, test.want) {
 			t.Errorf("test case (n:%d, k:%d) want %v but got %v", test.n, test.k, test.want, got)
 		}
 	}
