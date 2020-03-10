@@ -12,3 +12,12 @@ func maxProfit2(prices []int) int {
 
 	return sum
 }
+
+// 动态规划版本
+func maxProfit2ByDynamicProgram(prices []int) (result int) {
+	if len(prices) <= 1 {
+		return
+	}
+
+	return
+}
