@@ -1,13 +1,18 @@
 package api
 
-import "sort"
-
 func majorityElement(nums []int) int {
-	if len(nums) == 0 {
-		return 0
+	var result, cnt int
+	for _, v := range nums {
+		switch {
+		case cnt == 0:
+			result = v
+			cnt++
+		case result == v:
+			cnt++
+		case result != v:
+			cnt--
+		}
 	}
-	slice := intSlice(nums)
-	sort.Sort(slice)
 
-	return slice[len(slice)/2]
+	return result
 }
