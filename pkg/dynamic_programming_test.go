@@ -2,7 +2,7 @@ package pkg
 
 import (
 	"fmt"
-	"leetcode-solution/api"
+	"leetcode-solution/leetcode"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -30,13 +30,13 @@ func TestMinimumTotal(t *testing.T) {
 		{6, 5, 7},
 		{4, 1, 8, 3},
 	}
-	fmt.Println(api.minimumTotalV1(triangle))
-	fmt.Println(api.minimumTotalV2(triangle))
+	fmt.Println(leetcode.minimumTotalV1(triangle))
+	fmt.Println(leetcode.minimumTotalV2(triangle))
 }
 
 func TestMaxProduct(t *testing.T) {
 	nums := []int{2, 3, -2, 4}
-	got := api.maxProduct(nums)
+	got := leetcode.maxProduct(nums)
 	assert.Equal(t, 6, got)
 }
 
@@ -51,17 +51,17 @@ func TestCoinsChange(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		assert.Equal(t, test.want, api.coinChange(test.arr, test.amount))
+		assert.Equal(t, test.want, leetcode.coinChange(test.arr, test.amount))
 	}
 }
 
 func TestLargestRectangleArea(t *testing.T) {
 	s := []int{2, 1, 5, 6, 2, 3}
-	fmt.Println(api.largestRectangleArea(s))
+	fmt.Println(leetcode.largestRectangleArea(s))
 }
 
 func TestLIS(t *testing.T) {
-	fmt.Println(api.lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}))
+	fmt.Println(leetcode.lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}))
 }
 
 func TestLongestPalindrome(t *testing.T) {
@@ -83,7 +83,7 @@ func TestLongestPalindrome(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		got := api.longestPalindrome(test.s)
+		got := leetcode.longestPalindrome(test.s)
 		if got != test.want {
 			t.Fatalf("input '%s' want '%s' but got '%s'", test.s, test.want, got)
 		}
